@@ -11,9 +11,8 @@ def ask_user_input(guess):
     while True:
       guess = input("Guess a letter:")
       length_guess = len(guess)
-      if guess.isnotaplpha() and length_guess != 1:
+      if not guess.isalpha() and length_guess != 1:
         print("Invalid letter. Please, enter a single alphabetical character.")
       else:
         break
     check_guess(guess)
-    
