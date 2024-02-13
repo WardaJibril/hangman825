@@ -3,12 +3,6 @@ import random
 class Hangman:
     def __init__(self, num_lives,word_list):
 
-         # number of lives player has at the start of the game
-        num_lives = 5
-
-        # list of words for the computer to choose at random for user to guess
-        word_list = ["kiwi", "raspberry","orange","mango", "pineapple"]
-
         self.word = random.choice(word_list)
 
         # below is a list comprehension containing _ for each letter not yet guessed
@@ -51,7 +45,7 @@ class Hangman:
               print("Invalid letter. Please, enter a single alphabetical character.")
 
           elif self.guess in self.list_of_guesses:
-              print("You already tried that letter!")
+              print("You already tried that letter!")           
           else:
               self.check_guess(self.guess)
 
@@ -63,6 +57,7 @@ def play_game(word_list):
     while True:
         if num_lives == 0:
             print("You lost!")
+            break
         elif num_lives > 0:
             game.ask_for_input()
         else:
