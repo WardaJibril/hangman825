@@ -36,7 +36,6 @@ class Hangman:
 
     def ask_for_input(self):
 
-        while True:
           self.guess = input("Guess a letter:")
 
           self.length_guess = len(self.guess)
@@ -52,18 +51,18 @@ class Hangman:
           self.list_of_guesses.append(self.guess)
 
 def play_game(word_list):
-    num_lives = 5
+    num_lives = 5 
     game = Hangman(num_lives,word_list)
     while True:
-        if num_lives == 0:
+        if game.num_lives == 0:
             print("You lost!")
             break
-        elif num_lives > 0:
-            game.ask_for_input()
-        else: 
+        elif game.num_letters == 0: 
             print("Congratulations. You won the game!")
             break
+        elif game.num_lives > 0:
+            game.ask_for_input()
+        
 
 word_list = ["kiwi", "raspberry","orange","mango", "pineapple"]
 play_game(word_list)
-
