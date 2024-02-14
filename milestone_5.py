@@ -60,8 +60,9 @@ def play_game(word_list):
             break
         elif num_lives > 0:
             game.ask_for_input()
-        else:
+        else: 
             print("Congratulations. You won the game!")
+            break
 
 word_list = ["kiwi", "raspberry","orange","mango", "pineapple"]
 play_game(word_list)
